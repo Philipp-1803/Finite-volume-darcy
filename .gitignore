@@ -1,3 +1,9 @@
 __pycache__/
 .vscode/
 /Darcy_3D.vtk
+/Darcy_1D.py
+/Darcy_2D.py
+/Darcy_3D.py
+/Darcy_1D_objekt_without_postprocessing.py
+/Darcy_2D_Voronoi.py
+/test_darcy_1d.py

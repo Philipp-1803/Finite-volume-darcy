@@ -5,26 +5,16 @@ import Darcy_1D_objekt_without_postprocessing
 
 
 def experiment_1d():
-    data = Darcy_1D_objekt.Data()
-    pressure, fluxgrid_x = Darcy_1D_objekt.solve_1d(data)
-
-    print("Pressure", pressure)
-    print("Flux", fluxgrid_x)
-
-
-def experiment_1d_without_postprocessing():
-    data = Darcy_1D_objekt_without_postprocessing.Data()
-    pressure, fluxgrid_x = (
-        Darcy_1D_objekt_without_postprocessing.solve_1d_without_postprocessing(data)
-    )
+    problem = Darcy_1D_objekt.Darcy1D(N=4)
+    pressure, fluxgrid_x = problem.solve_1d()
 
     print("Pressure", pressure)
     print("Flux", fluxgrid_x)
 
 
 def experiment_2d():
-    data = Darcy_2D_objekt.Data()
-    pressuregrid, fluxgrid_x, fluxgrid_y = Darcy_2D_objekt.solve_2d(data)
+    problem = Darcy_2D_objekt.Darcy2D(N=4)
+    pressuregrid, fluxgrid_x, fluxgrid_y = problem.solve_2d()
 
     print("Pressure", pressuregrid)
     print("Flux_x", fluxgrid_x)
@@ -32,8 +22,8 @@ def experiment_2d():
 
 
 def experiment_3d():
-    data = Darcy_3D_objekt.Data()
-    pressuregrid, fluxgrid_x, fluxgrid_y, fluxgrid_z = Darcy_3D_objekt.solve_3d(data)
+    problem = Darcy_3D_objekt.Darcy3D(N=4)
+    pressuregrid, fluxgrid_x, fluxgrid_y, fluxgrid_z = problem.solve_3d()
 
     print("Pressure", pressuregrid)
     print("Flux_x", fluxgrid_x)
@@ -43,4 +33,5 @@ def experiment_3d():
 
 if __name__ == "__main__":
     experiment_1d()
-    experiment_1d_without_postprocessing()
+    experiment_2d()
+    experiment_3d()
